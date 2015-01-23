@@ -13,7 +13,6 @@ var pubPath = path.resolve(__dirname, '../public');
 var app = require('http').createServer(
   ecstatic({ root: pubPath })
 );
-var io = require('socket.io')(1337);
 
 app.listen(8080);
 console.log('Listening on :8080');
@@ -32,7 +31,7 @@ var ascoltatore = {
 };
 
 var moscaSettings = {
-  port: 1884,
+  port: 1883,
   backend: ascoltatore,
   persistence: {
     factory: mosca.persistence.Mongo,

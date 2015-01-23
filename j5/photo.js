@@ -3,11 +3,13 @@
  */
 
 
-var five = require("johnny-five")
-    , board
-    , photoresistor
-    , mqtt = require('mqtt');
-
+var five    = require("johnny-five")
+  , board
+  , photoresistor
+  , mqtt    = require('mqtt')
+  , config  = require('../config')
+;
+console.log(config.mqtt);
 
 /**
  * Client Mqtt
@@ -15,7 +17,7 @@ var five = require("johnny-five")
  */
 
 // on crée la connection
-client = mqtt.createClient(1883, 'localhost');
+client = mqtt.createClient(config.mqttPort, config.mqttIp);
 
 // on s'incript dans quelques rooms (canaux)
 client.subscribe('presence');
