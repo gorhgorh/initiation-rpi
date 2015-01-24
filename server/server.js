@@ -55,5 +55,3 @@ server.on('published', function(packet, client) {
 function setup() {
   debug('Mosca server is up and running');
 }
-
-
